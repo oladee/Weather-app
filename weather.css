@@ -55,3 +55,14 @@ body{
 .clarity{
     color: #EBEBF5;
 }
+.more-talk{
+    display: flex;
+}
+.card-result{
+    /* display: none; */
+    width: 70%;
+    background: linear-gradient(90deg, #5936B4 0%, #362A84 103.55%);
+}
+#temp-result{
+    font-size: 4.95rem;
+}
