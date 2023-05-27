@@ -75,6 +75,7 @@ main{
     align-items: center;
     max-width: 350px;
     justify-content: space-around;
+    padding-bottom: 10px;
 }
 #temp-result{
     font-size: 4.95rem;
