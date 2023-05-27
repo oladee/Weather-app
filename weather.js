@@ -1,6 +1,10 @@
 let input = document.getElementById("input");
 let userinput;
 let tempData;
+let startLat;
+let startLon;
+let cityName = document.getElementById('cityName');
+let temp = document.getElementById('temp')
 let tempResult = document.getElementById('temp-result');
 let resultHvalue = document.getElementById('result-hvalue');
 let resultLvalue = document.getElementById('result-lvalue');
@@ -19,16 +23,22 @@ window.onload = function () {
   };
 
   var nudgeTimeoutId = setTimeout(showNudgeBanner, 5000);
-
-  var geoSuccess = function (pos) {
+  var geoSuccess =  async function (pos) {
     hideNudgeBanner();
     // We have the location, don't display banner
     clearTimeout(nudgeTimeoutId);
 
     // Do magic with location
     startPos = pos;
-    document.getElementById("startLat").innerHTML = startPos.coords.latitude;
-    document.getElementById("startLon").innerHTML = startPos.coords.longitude;
+    startLat= startPos.coords.latitude;
+    startLon = startPos.coords.longitude;
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${startLat}&lon=${startLon}&appid=ab566aa3f08d69d549ab5c3333e0d79f`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      cityName.innerText = data.name
+      temp.innerText = Math.floor(data.main.temp - 273)
+    })
   };
   var geoError = function (error) {
     switch (error.code) {
@@ -40,6 +50,7 @@ window.onload = function () {
   };
 
   navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+  
   input.addEventListener("change", (e) => {
     userinput = e.target.value
     fetch(
