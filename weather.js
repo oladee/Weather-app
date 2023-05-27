@@ -9,7 +9,8 @@ let tempResult = document.getElementById('temp-result');
 let resultHvalue = document.getElementById('result-hvalue');
 let resultLvalue = document.getElementById('result-lvalue');
 let cityResult = document.getElementById('city-result');
-let countryResult = document.getElementById('country-result')
+let countryResult = document.getElementById('country-result');
+let cardR = document.getElementById('card-result');
 window.onload = function () {
   var startPos;
   var nudge = document.getElementById("nudge");
@@ -52,6 +53,7 @@ window.onload = function () {
   navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
   
   input.addEventListener("change", (e) => {
+    cardR.style.display = "flex"
     userinput = e.target.value
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${userinput}&appid=ab566aa3f08d69d549ab5c3333e0d79f`
