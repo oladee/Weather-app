@@ -58,13 +58,27 @@ body{
 .more-talk{
     display: flex;
 }
+.contain-result{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
 .card-result{
     /* display: none; */
     width: 70%;
     background: linear-gradient(90deg, #5936B4 0%, #362A84 103.55%);
     border-radius: 10px;
     box-shadow: inset 0px 4.95102px 4.95102px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+    justify-content: space-around;
 }
 #temp-result{
     font-size: 4.95rem;
+}
+.right-side img{
+    rotate: 30deg;
+    display: block;
+    width: 100px;
 }
