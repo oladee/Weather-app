@@ -1,5 +1,6 @@
 let input = document.getElementById("input");
 let userinput;
+let tempData;
 let tempResult = document.getElementById('temp-result');
 let resultHvalue = document.getElementById('result-hvalue');
 let resultLvalue = document.getElementById('result-lvalue');
@@ -45,11 +46,13 @@ window.onload = function () {
       `https://api.openweathermap.org/data/2.5/weather?q=${userinput}&appid=ab566aa3f08d69d549ab5c3333e0d79f`
     )
       .then((res) => res.json())
-      .then((data) => {
+      .then((data) =>   {
         console.log(data)
-        return (
-          cityResult.innerHTML = data.name
-          )
-      }).then(data => tempResult.innerText = data.main.temp);
+        tempResult.innerText = Math.floor(data.main.temp - 273)
+        resultHvalue.innerText = Math.floor(data.main.temp_max - 273)
+        resultLvalue.innerText = Math.floor(data.main.temp_min - 273)
+        cityResult.innerText = data.name
+        countryResult.innerText  = data.sys.country
+      })
   });
 };

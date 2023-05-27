@@ -8,11 +8,14 @@
 body{
     
     background: url("./Icon/House\ 4\ 3.png"), linear-gradient(168.44deg, #2E335A 1.62%, #1C1B33 95.72%);
-    height: 100svh;
     padding: 2rem 1rem;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+main{
+    height: 100vh;
+
 }
 .content{
     display: flex;
