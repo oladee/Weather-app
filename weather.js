@@ -11,6 +11,7 @@ let resultLvalue = document.getElementById('result-lvalue');
 let cityResult = document.getElementById('city-result');
 let countryResult = document.getElementById('country-result');
 let cardR = document.getElementById('card-result');
+let clarity = document.getElementById('clarity');
 window.onload = function () {
   var startPos;
   var nudge = document.getElementById("nudge");
@@ -39,6 +40,7 @@ window.onload = function () {
       console.log(data)
       cityName.innerText = data.name
       temp.innerText = Math.floor(data.main.temp - 273)
+      clarity.innerText = data.weather[0].description
     })
   };
   var geoError = function (error) {
