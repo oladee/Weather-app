@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+    background: linear-gradient(168.44deg, #2E335A 1.62%, #1C1B33 95.72%);
+    height: 100svh;
+}
+.search input{
+    border: none;
+    outline: none;
+    background: linear-gradient(168.44deg, rgba(46, 51, 90, 0.26) 1.62%, rgba(28, 27, 51, 0.26) 95.72%);
+}
