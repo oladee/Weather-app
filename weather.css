@@ -8,13 +8,29 @@
 body{
     background: linear-gradient(168.44deg, #2E335A 1.62%, #1C1B33 95.72%);
     height: 100svh;
+    padding: 2rem 1rem;
+}
+.content{
+    display: flex;
+    align-items: center;
+    border: rgba(46, 51, 90, 0.26);
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    box-shadow: inset 0px 4.95102px 4.95102px rgba(0, 0, 0, 0.25);
 }
 .search input{
-    /* border: none; */
+    border: none;
     outline: none;
     background: linear-gradient(168.44deg, rgba(46, 51, 90, 0.26) 1.62%, rgba(28, 27, 51, 0.26) 95.72%);
-    width: 70%;
+    width: 100%;
+    padding-left: 10px;
+    max-width: 300px;
 
+}
+::placeholder{
+    color: rgba(235, 235, 245, 0.6)
 }
 .search img{
     rotate: 30deg;
